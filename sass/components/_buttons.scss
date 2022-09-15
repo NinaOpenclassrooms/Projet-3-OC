@@ -1,0 +1,14 @@
+.btn {
+    width: 150px;
+    height: 30px;
+    margin:auto;
+    color: white;
+    font-size: 10px;
+    border-radius: 20px/20px;
+    background-color: pink;
+    background-image: linear-gradient (to top, $color-primary, $color-secondary); /* A REVOIR, NE FONCTIONNE PAS */
+}
+.btn p {
+    position: relative;
+    top: 9px;
+}

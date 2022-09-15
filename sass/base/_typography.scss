@@ -1,0 +1,83 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: $color-black;
+    font-size: 12px;
+   }
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: $color-black;
+    font-size: 12px;
+    font-weight: 600;
+}
+h2 {
+    font-family: 'Roboto', sans-serif;
+    color: $color-black;
+    font-size: 10px;
+    font-weight: 600;
+}
+h3 {
+    font-family: 'Roboto', sans-serif;
+    color: $color-black;
+    font-size: 13px;
+    font-weight: 600;
+} 
+h4 {
+    font-family: 'Roboto', sans-serif;
+    color: $color-black;
+    font-size: 9px;
+    font-weight: 400;
+}
+h5 {
+    font-family: 'Roboto', sans-serif;
+    color: $color-white;
+    font-size: 10px;
+    font-weight: 500;
+}
+h6 {
+    font-family: 'Shrikhand', cursive;
+    color: $color-black;
+    font-size: 20px;
+    font-weight: 600;
+}
+h7 {
+    font-family: 'Roboto', sans-serif;
+    color: $color-black;
+    font-size: 17px;
+    font-weight: 400;
+    border-bottom: 4px solid $color-primary; /* A RACCOURCIR */
+}
+h8 {
+    font-family: 'Roboto', sans-serif;
+    color: $color-black;
+    font-size: 17px;
+    font-weight: 600;
+}
+h9 {
+    font-family: 'Shrikhand', cursive;
+    color: $color-white;
+    font-size: 14px;
+    font-weight: 600;
+}
+h10 {
+    font-family: 'Roboto', sans-serif;
+    color: $color-white;
+    font-size: 10px;
+    font-weight: 400
+}
+button {
+    font-family: 'Roboto', sans-serif;
+    color: $color-white;
+    font-size: 14px;
+    font-weight: 400
+}
+#ville {
+    font-family: 'Roboto', sans-serif;
+    color: $color-black;
+    font-size: 10px;
+    font-weight: 600;
+    background-color: $color-background;
+    border: none;
+    padding-top: 3px;
+}
+

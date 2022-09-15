@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/d9b6d359c3.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/sass/main.css">
+        <title>Oh my food</title>
+    </head>
+    <body>
+
+        <!--Header-->
+        <header> 
+            <img src="images/logo.png" id="logo" alt="Logo de Ohmyfood"/> <!--Logo--> 
+        </header>
+
+        <!--Introduction Bloc-->
+        <section id="introduction">
+            <div id="introduction__research-container">
+                <div id="location_dot_icon_container">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <form method="post" action="traitement.php"> <!--Formulaire de saisie-->
+                    <input type="text" name="ville" id="ville" placeholder="Paris, Belleville" size="18"/>
+                </form>
+            </div>
+            <div id="introduction__text-container">
+                <h1>Réservez le menu qui vous convient</h1>
+                <h4>Découvrez des restaurants d'exception, séléctionnés par nos soins.</h4>
+                <div class="btn">
+                    <p>Explorer nos restaurants</p>
+                </div>    
+            </div>
+            
+        <!--Navigation Bloc-->
+        <section id="navigation">
+            <div id="navigation__heading">
+                <h1>Fonctionnement</h1>
+            </div>
+            <div id="navigation__container">
+                <div class="navigation-card">
+                    <a href="#">
+                        <div class="navigation-card__number">
+                            <p>1</p>
+                        </div>
+                        <div class="navigation-card__icon">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <h2>Choisissez un restaurant</h2>
+                    </a>
+                </div>
+                <div class="navigation-card">
+                    <a href="#">
+                        <div class="navigation-card__number">
+                            <p>2</p>
+                        </div>
+                        <div class="navigation-card__icon">
+                            <i class="fa-solid fa-list-ul"></i>
+                        </div>
+                        <h2>Composez votre menu</h2>
+                    </a>
+                </div>
+                <div class="navigation-card">
+                    <a href="#">
+                        <div class="navigation-card__number">
+                            <p>3</p>
+                        </div>
+                        <div class="navigation-card__icon">
+                            <i class="fa-solid fa-shop"></i>  <!--A MODIFIER--> 
+                        </div>
+                        <h2>Dégustez au restaurant</h2>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--Main-->
+        <main>
+            
+        </main>
+
+        <!--Footer-->
+        <footer>
+            <div id="footer__heading">
+                <h9>Ohmyfood</h9>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <div class="footer__list-element">
+                            <i class="fa-solid fa-utensils"></i>
+                            <h5>Proposez un restaurant</h5>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="footer__list-element">
+                            <i class="fa-solid fa-handshake-simple"></i>
+                            <h5>Devenir partenaire</h5>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="footer__list-element">
+                            <h10>Mentions légales</h10>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="footer__list-element">
+                            <h10>Contact</h10>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>
