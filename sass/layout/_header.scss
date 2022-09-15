@@ -1,0 +1,16 @@
+#logo {
+    height: 30px; /* A REVOIR, NE MODIFIE PAS LA TAILLE */
+    margin-left: 100px;
+}
+#header__heading { /* A REVOIR, REMETTRE A GAUCHE */
+    width: 100%;
+    height: 60px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.fa-solid.fa-arrow-left {
+    font-size: 18px;
+    padding-left: $padding-left;
+}

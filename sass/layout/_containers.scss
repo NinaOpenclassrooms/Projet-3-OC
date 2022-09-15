@@ -1,0 +1,50 @@
+.menu__background-photo {
+    width: 100%;
+    background-size: cover; 
+}
+#menu__container {
+    position: relative;
+    bottom: 70px;
+    background-color: $color-background;
+    border-radius: 12px/10px 12px/10px 0px 0px; /* A AMELIORER, RADIUS NE FONCTIONNE PAS AVEC LES 4 VALEURS */
+    padding-bottom: 60px;
+}
+#menu__heading {
+    @include flex-horizontal;
+    padding-left:$padding-left ;
+    h6 {
+        margin: 20px 0px;
+    }
+}
+.fa-regular.fa-heart {
+    font-size: 20px;
+    padding-right: 20px;
+}
+.menu__course-container {
+    @include flex-vertical;
+}
+.menu__sub-heading {
+    @include flex-vertical;
+    padding-left: $padding-left;
+    padding-top: 10px;
+}
+.menu__hemi-border {
+    width: 50px;
+    height: 3px;
+    background-color: $color-tertiary;
+}
+.menu__card {
+    @include flex-vertical;
+    background-color: $color-white;
+    border-radius: 12px/10px;
+    box-shadow: 6px 6px 6px gainsboro;
+    margin: 10px;
+    padding: 10px;
+}
+.menu__card-text {
+    @include flex-horizontal;
+    padding-top: 6px;
+    strong {
+        padding-right: 8px;
+    }
+}
