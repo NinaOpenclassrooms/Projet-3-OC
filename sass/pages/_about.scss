@@ -100,5 +100,60 @@
     color: $color-primary;
 }
 #restaurants {
+    height: 500px; /* A MODIFIER */
     padding-bottom: 100px;
+}
+#restaurants__heading h1 {
+        text-align: left;
+        width: 100%;
+        padding-left: $padding-left;
+        margin: 10px 0px;
+    }
+.restaurants__card {
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    background-color: $color-white;
+    border-radius: 12px/10px;
+    box-shadow: 6px 6px 6px gainsboro;
+    object-fit: cover;
+    overflow: hidden;
+    border: 2px solid green;
+    a {
+        width: 100%;
+        height: 100%;
+        border: 2px solid burlywood;
+    }
+}
+.restaurant__card-image {
+    width: 100%;
+    height: 70%;
+    border: 2px solid red;
+}
+.restaurant__card-text {
+    display: inline-block;
+    vertical-align: baseline;
+    width: 100%;
+    height: 100%;
+    border: 2px solid violet;
+    h3 {
+        width: 100%;
+        text-align: left;
+        border: 2px solid red;
+    }
+    h4 {
+        width: 100%;
+        text-align: left;
+        border: 2px solid blueviolet;
+    }
+}
+.restaurant__card-body {
+    @include flex-horizontal;
+    width: 100%;
+    height: 30%;
+    padding: 0px;
+    border: 2px solid orange;
+}
+.fa-regular.fa-heart.small {
+    border: 2px solid yellowgreen;
 }
