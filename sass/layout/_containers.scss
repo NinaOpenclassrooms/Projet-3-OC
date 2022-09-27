@@ -6,7 +6,7 @@
     position: relative;
     bottom: 70px;
     background-color: $color-background;
-    border-radius: 12px/10px 12px/10px 0px 0px; /* A AMELIORER, RADIUS NE FONCTIONNE PAS AVEC LES 4 VALEURS */
+    border-radius: 15px 15px 0px 0px;
     padding-bottom: 60px;
 }
 #menu__heading {
@@ -18,10 +18,36 @@
 }
 .fa-regular.fa-heart {
     font-size: 20px;
-    padding-right: 20px;
+    color: $color-black;
+    margin-right: 30px;
+    overflow: hidden;
+    &:hover {
+        cursor: pointer;
+    }
+    &:active {
+        font-weight: bold;
+        color: $color-primary;
+        &.heart-interior {
+            animation: heart-filling 2s forwards ease-out;
+        }
+    }
 }
-.menu__course-container {
+.heart-interior {
+    width: 22px;
+    height: 20px;
+    background-color: yellow;
+}
+.menu__course-container--1 {
     @include flex-vertical;
+    animation: menu-appear 3s 1s both ease-out;
+}
+.menu__course-container--2 {
+    @include flex-vertical;
+    animation: menu-appear 3s 2s both ease-out;
+}
+.menu__course-container--3 {
+    @include flex-vertical;
+    animation: menu-appear 3s 3s both ease-out;
 }
 .menu__sub-heading {
     @include flex-vertical;
@@ -34,17 +60,55 @@
     background-color: $color-tertiary;
 }
 .menu__card {
-    @include flex-vertical;
+    @include flex-horizontal;
     background-color: $color-white;
-    border-radius: 12px/10px;
+    border-radius: 15px;
     box-shadow: 6px 6px 6px gainsboro;
     margin: 10px;
-    padding: 10px;
+    overflow: hidden;
+    &:hover {
+        cursor: pointer;
+    }
+    &:active {
+        & > .menu__card-right {
+        animation: selection-tick 1s 100ms both;
+        & > .fa-solid.fa-check {
+            transform: rotate(360deg);
+            transition: transform 1s 200ms;
+            }
+        }
+    }
+    }
+.menu__card-left {
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 .menu__card-text {
     @include flex-horizontal;
+    width: 100%;
+    height: 30px;
     padding-top: 6px;
+    padding-bottom: 10px;
     strong {
         padding-right: 8px;
+    }
+}
+.menu__card-right {
+    width: 65px;
+    height: 63px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-tertiary;
+    border-radius: 0 15px 15px 0;
+    .fa-solid.fa-check {
+        display: flex;
+        justify-content: center;
+        font-size: 14px;
+        color: $color-tertiary;
+        background-color: $color-white;
+        border-radius: 50%;
+        padding: 4px;
     }
 }

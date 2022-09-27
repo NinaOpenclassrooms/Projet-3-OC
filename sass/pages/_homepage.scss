@@ -1,0 +1,237 @@
+/* Loading spinner */
+#body-homepage {
+    max-width: 1200px;
+    margin:auto;
+    animation: homepage-appear 5s 2s both;
+}
+.loading {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid $color-background;
+    border-top-color: $color-tertiary;
+    border-radius: 50%;
+    animation: loading-spinner 1.5s forwards ease-in-out 2 reverse;
+}
+.loading .fa-solid.fa-utensils { 
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    padding-left: 5px;
+    padding-top: 5px;
+    font-size: 26px;
+    color: $color-primary;
+}
+#loading-spinner-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin: auto;
+}
+
+/* Header Homepage */
+#logo-homepage {
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+/* Introduction Block */
+#introduction {
+    width: 100%;
+    max-width: 992px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: $color-background;
+    margin: auto;
+    text-align: center;
+}
+#introduction__research-container {
+    width: 100%;
+    height: 30px;
+    background-color: $color-background-dark;
+    text-align: center;
+    padding-top: 4px;
+    #introduction__research-text-container {
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+}
+#introduction h1 {
+    width: 50%;
+    margin: auto;
+}
+#introduction h4 {
+    width: 70%;
+    margin: auto;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+#introduction__text-container {
+    padding: 20px 0px;
+}
+#location_dot_icon_container {
+    padding-right: 10px;
+    padding-top: 2px;
+}
+
+/* Navigation Block */
+#navigation {
+    background-color: $color-white;
+}
+#navigation__heading {
+    text-align: left;
+    padding-left: $padding-left;
+    margin: 10px 0px;
+}
+#navigation__heading h1 {
+    width: 100%;
+    margin-left: 0px;
+}
+#navigation__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 20px;
+}
+.navigation-card {
+    width: 240px;
+    height: 50px;
+    background-color: $color-background;
+    border-radius: 15px/15px;
+    box-shadow: 6px 6px 6px gainsboro;
+    margin: 0px 10px 15px 5px;
+    .fa-solid.fa-mobile-screen-button, .fa-solid.fa-list-ul, .fa-solid.fa-shop {
+        color: grey;
+        margin-right: 15px;
+        margin-top: 6px;
+    }
+    h2 {
+        margin-top: 15px;
+    }
+    &:hover {
+        background-color: $color-primary-light;
+        cursor: pointer;
+        box-shadow: 6px 6px 6px $color-buttons-shadow-dark;
+        .fa-solid.fa-mobile-screen-button, .fa-solid.fa-list-ul, .fa-solid.fa-shop {
+            color: $color-primary;
+        }
+    }
+}
+.navigation-card a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 4px;
+}
+.navigation-card__number {
+    width: 15px;
+    height: 15px;
+    color: $color-white;
+    font-size: 8px;
+    background-color: $color-primary;
+    border-radius: 50%;
+    margin-right: 15px;
+    position: relative;
+    right: 6px;
+    top: 3px
+}
+.navigation-card__number p {
+    position: relative;
+    bottom: 4px;
+}
+/* Restaurants section */
+#restaurants {
+    padding-bottom: 100px;
+}
+#restaurants__heading h1 {
+    text-align: left;
+    width: 100%;
+    padding-left: $padding-left;
+    margin: 10px 0px;
+    }
+#restaurants__cards-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin:auto;
+}
+.restaurants__card {
+    width: 245px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background-color: $color-white;
+    border-radius: 12px/10px;
+    box-shadow: 6px 6px 6px gainsboro;
+    a {
+        width: 100%;
+        height: 100%;
+    }
+    @media screen and (min-width: 768px) {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+.restaurant__card-image {
+    width: 100%;
+    height: 108px;
+    position: relative;
+    object-fit: cover;
+    overflow: hidden;
+    margin: 0px;
+}
+.restaurant__card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    h3 {
+        width: 100%;
+        text-align: left;
+        margin: 20px 0px 0px 10px;
+    }
+    h4 {
+        width: 100%;
+        text-align: left;
+        position: relative;
+        margin-top: 5px;
+        right: 19px;
+    }
+}
+.restaurant__card-body {
+    @include flex-horizontal;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    bottom: 40px;
+    margin: 0px;
+    padding: 0px;
+}
+.fa-regular.fa-heart.small {
+    width: 40px;
+    font-size: 20px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    &:hover {
+        cursor: pointer;
+    }
+}

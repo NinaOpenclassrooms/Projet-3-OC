@@ -25,29 +25,29 @@ body {
 h1 {
   font-family: "Roboto", sans-serif;
   color: #000;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 h2 {
   font-family: "Roboto", sans-serif;
   color: #000;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 500;
 }
 
 h3 {
   font-family: "Roboto", sans-serif;
   color: #000;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
 }
 
 h4 {
   font-family: "Roboto", sans-serif;
   color: #000;
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 11px;
+  font-weight: 300;
 }
 
 h5 {
@@ -116,41 +116,60 @@ button {
   color: #000;
   font-size: 12px;
   font-weight: 600;
-  background-color: #f0f0ef;
+  background-color: #e7e7e4;
   border: none;
   padding-top: 3px;
 }
 
 .btn {
-  width: 150px;
+  width: 140px;
   height: 30px;
   margin: auto;
   color: white;
   font-size: 12px;
+  font-weight: 400;
   text-align: center;
   border-radius: 20px/20px;
-  background-color: pink;
-  background-image: linear-gradient to top, #9356DC, #FF79DA; /* A REVOIR, NE FONCTIONNE PAS */
+  box-shadow: 6px 6px 6px gainsboro;
+  margin-top: 20px;
+  background-image: linear-gradient(to top, #9356DC 0%, #FF79DA 100%);
+}
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 6px 6px 6px #c2c2c2;
+  opacity: 0.8;
 }
 .btn p {
-  position: relative;
-  top: 9px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+#introduction__text-container p {
+  font-size: 10px;
 }
 
 .nouveau {
-  width: 70px;
-  height: 25px;
-  font-size: 12px;
-  color: #4acbab;
+  width: 58px;
+  height: 20px;
+  font-size: 9px;
+  font-weight: 500;
+  border-radius: 3%/12%;
+  color: #278870;
   background-color: #99E2D0;
   position: relative;
-  left: 210px;
-  bottom: 140px;
+  left: 175px;
+  bottom: 112px;
 }
 .nouveau p {
   padding-top: 5px;
 }
 
+.nouveau--hidden {
+  opacity: 0;
+}
+
+/* Header */
 #logo {
   height: 30px; /* A REVOIR, NE MODIFIE PAS LA TAILLE */
   margin-left: 100px;
@@ -178,8 +197,8 @@ button {
 #menu__container {
   position: relative;
   bottom: 70px;
-  background-color: #f0f0ef;
-  border-radius: 12px/10px 12px/10px 0px 0px; /* A AMELIORER, RADIUS NE FONCTIONNE PAS AVEC LES 4 VALEURS */
+  background-color: #f5f5f4;
+  border-radius: 15px 15px 0px 0px;
   padding-bottom: 60px;
 }
 
@@ -196,21 +215,56 @@ button {
 
 .fa-regular.fa-heart {
   font-size: 20px;
-  padding-right: 20px;
+  color: #000;
+  margin-right: 30px;
+  overflow: hidden;
+}
+.fa-regular.fa-heart:hover {
+  cursor: pointer;
+}
+.fa-regular.fa-heart:active {
+  font-weight: bold;
+  color: #9356DC;
+}
+.fa-regular.fa-heart:active.heart-interior {
+  -webkit-animation: heart-filling 2s forwards ease-out;
+          animation: heart-filling 2s forwards ease-out;
 }
 
-.menu__course-container {
+.heart-interior {
+  width: 22px;
+  height: 20px;
+  background-color: yellow;
+}
+
+.menu__course-container--1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: left;
+  -webkit-animation: menu-appear 3s 1s both ease-out;
+          animation: menu-appear 3s 1s both ease-out;
+}
+
+.menu__course-container--2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  -webkit-animation: menu-appear 3s 2s both ease-out;
+          animation: menu-appear 3s 2s both ease-out;
+}
+
+.menu__course-container--3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  -webkit-animation: menu-appear 3s 3s both ease-out;
+          animation: menu-appear 3s 3s both ease-out;
 }
 
 .menu__sub-heading {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: left;
   padding-left: 15px;
   padding-top: 10px;
 }
@@ -223,14 +277,31 @@ button {
 
 .menu__card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: left;
+  align-items: center;
   background-color: #FFF;
-  border-radius: 12px/10px;
+  border-radius: 15px;
   box-shadow: 6px 6px 6px gainsboro;
   margin: 10px;
-  padding: 10px;
+  overflow: hidden;
+}
+.menu__card:hover {
+  cursor: pointer;
+}
+.menu__card:active > .menu__card-right {
+  -webkit-animation: selection-tick 1s 100ms both;
+          animation: selection-tick 1s 100ms both;
+}
+.menu__card:active > .menu__card-right > .fa-solid.fa-check {
+  transform: rotate(360deg);
+  transition: transform 1s 200ms;
+}
+
+.menu__card-left {
+  width: 100%;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 .menu__card-text {
@@ -238,12 +309,35 @@ button {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  height: 30px;
   padding-top: 6px;
+  padding-bottom: 10px;
 }
 .menu__card-text strong {
   padding-right: 8px;
 }
 
+.menu__card-right {
+  width: 65px;
+  height: 63px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  border-radius: 0 15px 15px 0;
+}
+.menu__card-right .fa-solid.fa-check {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  color: #99E2D0;
+  background-color: #FFF;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+/* footer */
 footer {
   background-color: #000;
   padding: 20px 0px;
@@ -278,32 +372,79 @@ footer h5 {
   margin: 0px;
 }
 
+/* Loading spinner */
+#body-homepage {
+  max-width: 1200px;
+  margin: auto;
+  -webkit-animation: homepage-appear 5s 2s both;
+          animation: homepage-appear 5s 2s both;
+}
+
+.loading {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid #f5f5f4;
+  border-top-color: #99E2D0;
+  border-radius: 50%;
+  animation: loading-spinner 1.5s forwards ease-in-out 2 reverse;
+}
+
+.loading .fa-solid.fa-utensils {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  padding-left: 5px;
+  padding-top: 5px;
+  font-size: 26px;
+  color: #9356DC;
+}
+
+#loading-spinner-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin: auto;
+}
+
+/* Header Homepage */
 #logo-homepage {
   height: 20px;
   display: flex;
   justify-content: center;
   margin: auto;
+  margin-bottom: 10px;
 }
 
+/* Introduction Block */
 #introduction {
   width: 100%;
   max-width: 992px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-color: #f0f0ef;
+  background-color: #f5f5f4;
   margin: auto;
   text-align: center;
 }
 
 #introduction__research-container {
   width: 100%;
-  height: 20px;
-  margin-top: 8px;
+  height: 30px;
+  background-color: #e7e7e4;
+  text-align: center;
+  padding-top: 4px;
+}
+#introduction__research-container #introduction__research-text-container {
+  width: 250px;
   display: flex;
   justify-content: center;
-  background-color: darken #f0f0ef, 20%;
-  text-align: center;
+  margin: auto;
 }
 
 #introduction h1 {
@@ -312,7 +453,7 @@ footer h5 {
 }
 
 #introduction h4 {
-  width: 60%;
+  width: 70%;
   margin: auto;
   margin-top: 4px;
   margin-bottom: 10px;
@@ -323,10 +464,11 @@ footer h5 {
 }
 
 #location_dot_icon_container {
-  padding-right: 20px;
+  padding-right: 10px;
   padding-top: 2px;
 }
 
+/* Navigation Block */
 #navigation {
   background-color: #FFF;
 }
@@ -344,18 +486,34 @@ footer h5 {
 
 #navigation__container {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap; /* A REVOIR, NE VA PAS A LA LIGNE */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 20px;
 }
 
 .navigation-card {
-  width: auto;
-  max-width: 768px;
-  height: 35px;
-  background-color: #f0f0ef;
-  border-radius: 12px/10px;
+  width: 240px;
+  height: 50px;
+  background-color: #f5f5f4;
+  border-radius: 15px/15px;
   box-shadow: 6px 6px 6px gainsboro;
-  margin: 0px 10px 10px 20px;
+  margin: 0px 10px 15px 5px;
+}
+.navigation-card .fa-solid.fa-mobile-screen-button, .navigation-card .fa-solid.fa-list-ul, .navigation-card .fa-solid.fa-shop {
+  color: grey;
+  margin-right: 15px;
+  margin-top: 6px;
+}
+.navigation-card h2 {
+  margin-top: 15px;
+}
+.navigation-card:hover {
+  background-color: #f1eafb;
+  cursor: pointer;
+  box-shadow: 6px 6px 6px #c2c2c2;
+}
+.navigation-card:hover .fa-solid.fa-mobile-screen-button, .navigation-card:hover .fa-solid.fa-list-ul, .navigation-card:hover .fa-solid.fa-shop {
+  color: #9356DC;
 }
 
 .navigation-card a {
@@ -377,6 +535,7 @@ footer h5 {
   margin-right: 15px;
   position: relative;
   right: 6px;
+  top: 3px;
 }
 
 .navigation-card__number p {
@@ -384,21 +543,8 @@ footer h5 {
   bottom: 4px;
 }
 
-.fa-solid.fa-mobile-screen-button, .fa-solid.fa-list-ul, .fa-solid.fa-shop {
-  color: darken #f0f0ef, 20%; /* A REVOIR, NE FONCTIONNE PAS */
-  margin-right: 15px;
-}
-
-.navigation-card:active { /* &:active NE FONCTIONNE PAS */
-  background-color: lighten #9356DC, 20%;
-}
-
-.fa-solid.fa-mobile-screen-button, .fa-solid.fa-list-ul, .fa-solid.fa-shop {
-  color: #9356DC;
-}
-
+/* Restaurants section */
 #restaurants {
-  height: 500px; /* A MODIFIER */
   padding-bottom: 100px;
 }
 
@@ -409,46 +555,66 @@ footer h5 {
   margin: 10px 0px;
 }
 
-.restaurants__card {
-  width: 300px;
-  height: 200px;
+#restaurants__cards-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   margin: auto;
+}
+
+.restaurants__card {
+  width: 245px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  margin-bottom: 15px;
+  overflow: hidden;
   background-color: #FFF;
   border-radius: 12px/10px;
   box-shadow: 6px 6px 6px gainsboro;
-  -o-object-fit: cover;
-     object-fit: cover;
-  overflow: hidden;
-  border: 2px solid green;
 }
 .restaurants__card a {
   width: 100%;
   height: 100%;
-  border: 2px solid burlywood;
+}
+@media screen and (min-width: 768px) {
+  .restaurants__card {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 .restaurant__card-image {
   width: 100%;
-  height: 70%;
-  border: 2px solid red;
+  height: 108px;
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  margin: 0px;
 }
 
 .restaurant__card-text {
-  display: inline-block;
-  vertical-align: baseline;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
   height: 100%;
-  border: 2px solid violet;
 }
 .restaurant__card-text h3 {
   width: 100%;
   text-align: left;
-  border: 2px solid red;
+  margin: 20px 0px 0px 10px;
 }
 .restaurant__card-text h4 {
   width: 100%;
   text-align: left;
-  border: 2px solid blueviolet;
+  position: relative;
+  margin-top: 5px;
+  right: 19px;
 }
 
 .restaurant__card-body {
@@ -457,11 +623,19 @@ footer h5 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 30%;
+  height: 60px;
+  position: relative;
+  bottom: 40px;
+  margin: 0px;
   padding: 0px;
-  border: 2px solid orange;
 }
 
 .fa-regular.fa-heart.small {
-  border: 2px solid yellowgreen;
+  width: 40px;
+  font-size: 20px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+}
+.fa-regular.fa-heart.small:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

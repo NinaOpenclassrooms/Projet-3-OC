@@ -7,26 +7,26 @@ body {
 h1 {
     font-family: 'Roboto', sans-serif;
     color: $color-black;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
 }
 h2 {
     font-family: 'Roboto', sans-serif;
     color: $color-black;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 11px;
+    font-weight: 500;
 }
 h3 {
     font-family: 'Roboto', sans-serif;
     color: $color-black;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
 } 
 h4 {
     font-family: 'Roboto', sans-serif;
     color: $color-black;
-    font-size: 12px;
-    font-weight: 400;
+    font-size: 11px;
+    font-weight: 300;
 }
 h5 {
     font-family: 'Roboto', sans-serif;
@@ -85,7 +85,7 @@ button {
     color: $color-black;
     font-size: 12px;
     font-weight: 600;
-    background-color: $color-background;
+    background-color: $color-background-dark;
     border: none;
     padding-top: 3px;
 }
