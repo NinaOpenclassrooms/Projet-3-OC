@@ -1,9 +1,15 @@
 /* Menu Block */
 .menu__background-photo {
     width: 100%;
-    background-size: cover; 
+    background-size: cover;
+    @media (min-width: 600px) {
+        height: 200px;
+        object-fit: cover;
+    }
 }
 #menu__container {
+    max-width: 1200px;
+    margin: auto;
     position: relative;
     bottom: 43px;
     background-color: $color-background;
@@ -12,31 +18,33 @@
 }
 #menu__heading {
     @include flex-horizontal;
-    padding-left:$padding-left ;
+    padding-left:$padding-left;
     h6 {
         margin: 20px 0px;
     }
 }
-.fa-regular.fa-heart {
-    font-size: 20px;
-    color: $color-black;
-    margin-right: 30px;
-    overflow: hidden;
-    &:hover {
-        cursor: pointer;
-    }
+.fa-regular.fa-heart.small.inactive.menu-heart { /* A REVOIR, NE FONCTIONNE PAS*/
     &:active {
-        font-weight: bold;
-        color: $color-primary;
-        &.heart-interior {
-            animation: heart-filling 2s forwards ease-out;
-        }
+        opacity: 0;
+        transition-duration: 1.5s;
     }
 }
-.heart-interior {
-    width: 22px;
-    height: 20px;
-    background-color: yellow;
+.fa-regular.fa-heart.small.active.menu-heart { /* A REVOIR, NE FONCTIONNE PAS*/
+    position: relative;
+    right: 18px;
+    color: $color-primary;
+    opacity: 0;
+    &:active {
+        opacity: 1;
+        transition-duration: 1.5s;
+    }
+}
+#menu__course-full-container {
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 .menu__course-container--1 {
     @include flex-vertical;
@@ -72,18 +80,27 @@
     }
     &:active {
         & > .menu__card-right {
-        animation: selection-tick 1s 100ms both;
+        animation: selection-tick 1s 100ms forwards;
         }
-        & > .fa-solid.fa-check {
+    }
+    &:active {
+        & > .fa-solid.fa-check { /* A REVOIR, NE FONCTIONNE PLUS*/
             transform: rotate(360deg);
-            transition: transform 1s 200ms;
+            transition-duration: 2s;
+            transition: transform 2s 300ms; 
+            color: red;
         }
+    }
+    h8 {
+        text-overflow: ellipsis; /* A REVOIR, NE FONCTIONNE PAS*/
+        overflow: hidden;
     }
     }
 .menu__card-left {
     width: 100%;
     padding-left: 10px;
     padding-top: 10px;
+    padding-right: 100px;
 }
 .menu__card-text {
     @include flex-horizontal;
@@ -94,7 +111,8 @@
     h11 {
         width: 100px;
         height: 18px;
-        text-overflow: ellipsis; /* A REVOIR, NE FONCTIONNE PAS, AUSSI MIS DANS TYPO */
+        text-overflow: ellipsis; /* A REVOIR, NE FONCTIONNE PAS */
+        overflow: hidden;
     }
     strong {
         padding-right: 8px;
@@ -106,6 +124,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    left: 53px;
     background-color: $color-tertiary;
     border-radius: 0 15px 15px 0;
     .fa-solid.fa-check {

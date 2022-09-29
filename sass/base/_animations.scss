@@ -1,0 +1,50 @@
+/* Keyframes */
+@keyframes loading-spinner {
+    0% {
+       transform: rotate(2turn);
+    }
+    100% {
+       opacity: 0%;
+    }
+ }
+ @keyframes menu-appear {
+    0% {
+       opacity: 0;
+    }
+    20% {
+       opacity: 0.6;
+    }
+    30% {
+       opacity: 0.7;
+    }
+    40%, 100% {
+       opacity: 1;
+    }
+ }
+ @keyframes selection-tick {
+    from {
+       transform: translateX(0%)
+    }
+    to {
+       transform: translateX(-100%)
+    }
+ }
+ @keyframes homepage-appear {
+    0%, 99% {
+       opacity: 0%;
+    }
+    100% {
+       opacity: 100%;
+    }
+ }
+ @keyframes heart-filling {
+   0% {
+      opacity: 0%;
+   }
+   50% {
+      opacity: 50%
+   }
+   100% {
+      opacity: 100%;
+   }
+ }

@@ -1,21 +1,4 @@
 @charset "UTF-8";
-/* Général */
-* {
-  box-sizing: border-box;
-  text-decoration: none;
-}
-
-.box {
-  box-sizing: border-box; /* Opera/IE 8+ */
-  -moz-box-sizing: border-box; /* Firefox, autres Gecko */
-  -webkit-box-sizing: border-box; /* Safari/Chrome, autres WebKit */
-}
-
-body {
-  width: auto;
-  margin: 10px 0px 0px 0px;
-}
-
 /* Keyframes */
 @-webkit-keyframes loading-spinner {
   0% {
@@ -61,36 +44,20 @@ body {
     opacity: 1;
   }
 }
-@-webkit-keyframes heart-filling {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(200%);
-  }
-}
-@keyframes heart-filling {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(200%);
-  }
-}
 @-webkit-keyframes selection-tick {
   from {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   to {
-    transform: translateX(0%);
+    transform: translateX(-100%);
   }
 }
 @keyframes selection-tick {
   from {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   to {
-    transform: translateX(0%);
+    transform: translateX(-100%);
   }
 }
 @-webkit-keyframes homepage-appear {
@@ -109,6 +76,45 @@ body {
     opacity: 100%;
   }
 }
+@-webkit-keyframes heart-filling {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes heart-filling {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+/* Général */
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.box {
+  box-sizing: border-box; /* Opera/IE 8+ */
+  -moz-box-sizing: border-box; /* Firefox, autres Gecko */
+  -webkit-box-sizing: border-box; /* Safari/Chrome, autres WebKit */
+}
+
+body {
+  width: 100%;
+  margin: 10px 0px 0px 0px;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   color: #000;
@@ -170,7 +176,6 @@ h8 {
   color: #000;
   font-size: 15px;
   font-weight: 600;
-  text-overflow: ellipsis;
 }
 
 h9 {
@@ -192,7 +197,6 @@ h11 {
   color: #000;
   font-size: 14px;
   font-weight: 400;
-  text-overflow: ellipsis;
 }
 
 strong {
@@ -287,8 +291,17 @@ button {
   width: 100%;
   background-size: cover;
 }
+@media (min-width: 600px) {
+  .menu__background-photo {
+    height: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
 
 #menu__container {
+  max-width: 1200px;
+  margin: auto;
   position: relative;
   bottom: 43px;
   background-color: #f5f5f4;
@@ -307,28 +320,29 @@ button {
   margin: 20px 0px;
 }
 
-.fa-regular.fa-heart {
-  font-size: 20px;
-  color: #000;
-  margin-right: 30px;
-  overflow: hidden;
-}
-.fa-regular.fa-heart:hover {
-  cursor: pointer;
-}
-.fa-regular.fa-heart:active {
-  font-weight: bold;
-  color: #9356DC;
-}
-.fa-regular.fa-heart:active.heart-interior {
-  -webkit-animation: heart-filling 2s forwards ease-out;
-          animation: heart-filling 2s forwards ease-out;
+.fa-regular.fa-heart.small.inactive.menu-heart { /* A REVOIR, NE FONCTIONNE PAS*/ }
+.fa-regular.fa-heart.small.inactive.menu-heart:active {
+  opacity: 0;
+  transition-duration: 1.5s;
 }
 
-.heart-interior {
-  width: 22px;
-  height: 20px;
-  background-color: yellow;
+.fa-regular.fa-heart.small.active.menu-heart { /* A REVOIR, NE FONCTIONNE PAS*/
+  position: relative;
+  right: 18px;
+  color: #9356DC;
+  opacity: 0;
+}
+.fa-regular.fa-heart.small.active.menu-heart:active {
+  opacity: 1;
+  transition-duration: 1.5s;
+}
+
+#menu__course-full-container {
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .menu__course-container--1 {
@@ -384,18 +398,25 @@ button {
   cursor: pointer;
 }
 .menu__card:active > .menu__card-right {
-  -webkit-animation: selection-tick 1s 100ms both;
-          animation: selection-tick 1s 100ms both;
+  -webkit-animation: selection-tick 1s 100ms forwards;
+          animation: selection-tick 1s 100ms forwards;
 }
-.menu__card:active > .fa-solid.fa-check {
+.menu__card:active > .fa-solid.fa-check { /* A REVOIR, NE FONCTIONNE PLUS*/
   transform: rotate(360deg);
-  transition: transform 1s 200ms;
+  transition-duration: 2s;
+  transition: transform 2s 300ms;
+  color: red;
+}
+.menu__card h8 {
+  text-overflow: ellipsis; /* A REVOIR, NE FONCTIONNE PAS*/
+  overflow: hidden;
 }
 
 .menu__card-left {
   width: 100%;
   padding-left: 10px;
   padding-top: 10px;
+  padding-right: 100px;
 }
 
 .menu__card-text {
@@ -411,7 +432,8 @@ button {
 .menu__card-text h11 {
   width: 100px;
   height: 18px;
-  text-overflow: ellipsis; /* A REVOIR, NE FONCTIONNE PAS, AUSSI MIS DANS TYPO */
+  text-overflow: ellipsis; /* A REVOIR, NE FONCTIONNE PAS */
+  overflow: hidden;
 }
 .menu__card-text strong {
   padding-right: 8px;
@@ -423,6 +445,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  left: 53px;
   background-color: #99E2D0;
   border-radius: 0 15px 15px 0;
 }
@@ -438,21 +462,27 @@ button {
 
 /* Footer */
 footer {
+  width: 100%;
   background-color: #000;
   padding: 20px 0px;
 }
 
 #footer__heading {
+  max-width: 1200px;
+  margin: auto;
   padding-left: 15px;
   text-align: left;
 }
 
 .footer__list-element {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   background-color: #000;
   padding: 5px 0px;
+  padding-left: 15px;
 }
 
 ul {
@@ -472,13 +502,14 @@ footer h5 {
 
 /* Footer Pages */
 .footer-pages {
+  width: 100%;
   position: relative;
   bottom: 43px;
 }
 
 /* Loading spinner */
 #body-homepage {
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
   -webkit-animation: homepage-appear 5s 2s both;
           animation: homepage-appear 5s 2s both;
@@ -528,7 +559,6 @@ footer h5 {
 /* Introduction Block */
 #introduction {
   width: 100%;
-  max-width: 992px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -574,21 +604,30 @@ footer h5 {
 
 /* Navigation Block */
 #navigation {
+  width: 100%;
+  margin: auto;
   background-color: #FFF;
 }
 
 #navigation__heading {
+  max-width: 1200px;
+  margin: auto;
   text-align: left;
   padding-left: 15px;
-  margin: 10px 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #navigation__heading h1 {
   width: 100%;
-  margin-left: 0px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 #navigation__container {
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -649,18 +688,24 @@ footer h5 {
 
 /* Restaurants section */
 #restaurants {
+  max-width: 1200px;
+  margin: auto;
   padding-bottom: 100px;
 }
 
 #restaurants__heading h1 {
   text-align: left;
   width: 100%;
+  max-width: 1200px;
+  margin: auto;
   padding-left: 15px;
-  margin: 10px 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #restaurants__cards-container {
   width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-wrap: wrap;
   margin: auto;
@@ -669,9 +714,8 @@ footer h5 {
 .restaurants__card {
   width: 245px;
   height: 160px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  grid-template-columns: repeat(1, 1fr);
+  display: grid;
   margin: auto;
   margin-bottom: 15px;
   overflow: hidden;
@@ -682,12 +726,6 @@ footer h5 {
 .restaurants__card a {
   width: 100%;
   height: 100%;
-}
-@media screen and (min-width: 768px) {
-  .restaurants__card {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
 }
 
 .restaurant__card-image {
@@ -718,7 +756,7 @@ footer h5 {
   text-align: left;
   position: relative;
   margin-top: 5px;
-  right: 19px;
+  right: 14px;
 }
 
 .restaurant__card-body {
@@ -734,12 +772,33 @@ footer h5 {
   padding: 0px;
 }
 
-.fa-regular.fa-heart.small {
+.fa-regular.fa-heart.small.inactive {
+  width: 40px;
+  position: relative;
+  left: 45px;
+  font-size: 20px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  z-index: 2;
+}
+.fa-regular.fa-heart.small.inactive:hover {
+  cursor: pointer;
+}
+.fa-regular.fa-heart.small.inactive:active {
+  opacity: 0;
+}
+
+.fa-regular.fa-heart.small.active {
   width: 40px;
   font-size: 20px;
   margin-right: 20px;
   margin-bottom: 0px;
+  font-weight: bold;
+  color: #9356DC;
+  opacity: 1;
+  z-index: 1;
 }
-.fa-regular.fa-heart.small:hover {
-  cursor: pointer;
+.fa-regular.fa-heart.small.active:active {
+  -webkit-animation: heart-filling, 2s, 100ms, ease-out, forwards;
+          animation: heart-filling, 2s, 100ms, ease-out, forwards;
 }/*# sourceMappingURL=main.css.map */
