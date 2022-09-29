@@ -37,21 +37,22 @@ h5 {
 h6 {
     font-family: 'Shrikhand', cursive;
     color: $color-black;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 600;
 }
 h7 {
     font-family: 'Roboto', sans-serif;
     color: $color-black;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 400;
     text-transform: uppercase;
 }
 h8 {
     font-family: 'Roboto', sans-serif;
     color: $color-black;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 600;
+    text-overflow: ellipsis;
 }
 h9 {
     font-family: 'Shrikhand', cursive;
@@ -68,8 +69,9 @@ h10 {
 h11 {
     font-family: 'Roboto', sans-serif;
     color: $color-black;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
+    text-overflow: ellipsis;
 }
 strong {
     font-size: 15px;

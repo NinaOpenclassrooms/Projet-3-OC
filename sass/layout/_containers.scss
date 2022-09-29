@@ -1,13 +1,14 @@
+/* Menu Block */
 .menu__background-photo {
     width: 100%;
     background-size: cover; 
 }
 #menu__container {
     position: relative;
-    bottom: 70px;
+    bottom: 43px;
     background-color: $color-background;
     border-radius: 15px 15px 0px 0px;
-    padding-bottom: 60px;
+    padding-bottom: 50px;
 }
 #menu__heading {
     @include flex-horizontal;
@@ -72,10 +73,10 @@
     &:active {
         & > .menu__card-right {
         animation: selection-tick 1s 100ms both;
+        }
         & > .fa-solid.fa-check {
             transform: rotate(360deg);
             transition: transform 1s 200ms;
-            }
         }
     }
     }
@@ -90,6 +91,11 @@
     height: 30px;
     padding-top: 6px;
     padding-bottom: 10px;
+    h11 {
+        width: 100px;
+        height: 18px;
+        text-overflow: ellipsis; /* A REVOIR, NE FONCTIONNE PAS, AUSSI MIS DANS TYPO */
+    }
     strong {
         padding-right: 8px;
     }
