@@ -17,26 +17,11 @@
     padding-bottom: 50px;
 }
 #menu__heading {
+    width: 90%;
     @include flex-horizontal;
     padding-left:$padding-left;
     h6 {
         margin: 20px 0px;
-    }
-}
-.fa-regular.fa-heart.small.inactive.menu-heart { /* A REVOIR, NE FONCTIONNE PAS*/
-    &:active {
-        opacity: 0;
-        transition-duration: 1.5s;
-    }
-}
-.fa-regular.fa-heart.small.active.menu-heart { /* A REVOIR, NE FONCTIONNE PAS*/
-    position: relative;
-    right: 18px;
-    color: $color-primary;
-    opacity: 0;
-    &:active {
-        opacity: 1;
-        transition-duration: 1.5s;
     }
 }
 #menu__course-full-container {
@@ -46,16 +31,22 @@
     display: flex;
     flex-wrap: wrap;
 }
-.menu__course-container--1 {
-    @include flex-vertical;
+.menu__course-container-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     animation: menu-appear 3s 1s both ease-out;
 }
-.menu__course-container--2 {
-    @include flex-vertical;
+.menu__course-container-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     animation: menu-appear 3s 2s both ease-out;
 }
-.menu__course-container--3 {
-    @include flex-vertical;
+.menu__course-container-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     animation: menu-appear 3s 3s both ease-out;
 }
 .menu__sub-heading {
@@ -64,12 +55,14 @@
     padding-top: 10px;
 }
 .menu__hemi-border {
-    width: 50px;
+    width: 38px;
     height: 3px;
     background-color: $color-tertiary;
 }
 .menu__card {
     @include flex-horizontal;
+    width: 280px;
+    height: 60px;
     background-color: $color-white;
     border-radius: 15px;
     box-shadow: 6px 6px 6px gainsboro;
@@ -78,29 +71,31 @@
     &:hover {
         cursor: pointer;
     }
-    &:active {
-        & > .menu__card-right {
-        animation: selection-tick 1s 100ms forwards;
+    &:hover {
+        .menu__card-right {
+            animation: selection-tick 1s 100ms forwards;
         }
-    }
-    &:active {
-        & > .fa-solid.fa-check { /* A REVOIR, NE FONCTIONNE PLUS*/
-            transform: rotate(360deg);
-            transition-duration: 2s;
-            transition: transform 2s 300ms; 
-            color: red;
+        .fa-solid.fa-check {
+            transform: rotate(1turn);
+            transition: transform 1s 200ms;
+        }
+        .menu__card-left {
+            width: 80%;
+            transition-duration: 1s;
+
         }
     }
     h8 {
-        text-overflow: ellipsis; /* A REVOIR, NE FONCTIONNE PAS*/
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow-wrap: normal;
         overflow: hidden;
     }
-    }
+}
 .menu__card-left {
     width: 100%;
     padding-left: 10px;
     padding-top: 10px;
-    padding-right: 100px;
 }
 .menu__card-text {
     @include flex-horizontal;
@@ -109,9 +104,11 @@
     padding-top: 6px;
     padding-bottom: 10px;
     h11 {
-        width: 100px;
+        width: 80%;
         height: 18px;
-        text-overflow: ellipsis; /* A REVOIR, NE FONCTIONNE PAS */
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow-wrap: normal;
         overflow: hidden;
     }
     strong {
@@ -119,13 +116,12 @@
     }
 }
 .menu__card-right {
-    width: 65px;
+    width: 60px;
     height: 63px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    left: 53px;
+    margin-right: -65px;
     background-color: $color-tertiary;
     border-radius: 0 15px 15px 0;
     .fa-solid.fa-check {

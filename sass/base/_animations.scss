@@ -7,6 +7,20 @@
        opacity: 0%;
     }
  }
+ @keyframes jump { /* A ENLEVER SI NE FONCTIONNE PAS */
+   0% {
+     transform: translateY(0);
+   }
+   25% {
+     transform: translateY(-100%);
+   }
+   75% {
+     transform: translateY(-100%);
+   }
+   100% {
+     transform: translateY(0);
+   }
+}
  @keyframes menu-appear {
     0% {
        opacity: 0;
